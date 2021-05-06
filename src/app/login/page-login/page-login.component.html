@@ -1,1 +1,18 @@
-<p>page-login works!</p>
+<div class="h-100 flex justify-content-center align-items-center">
+  <div class="flex justify-content-center align-items-center loginBox">
+    <form
+      [formGroup]="form"
+      class="flex flex-column justify-content-center align-items-center"
+    >
+      <div class="loginLabel flex-column">
+        <label for="">UserName</label>
+        <input type="text" formControlName="username" />
+      </div>
+      <div class="loginLabel flex flex-column">
+        <label for="">Password</label>
+        <input type="text" formControlName="password" />
+      </div>
+      <button type="button">Ingresar</button>
+    </form>
+  </div>
+</div>
