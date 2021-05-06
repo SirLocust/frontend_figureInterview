@@ -29,7 +29,12 @@ export class PageLoginComponent implements OnInit {
     const username = this.form.get('username')?.value;
     const password = this.form.get('password')?.value;
     
-    this.authService.login(username, password);
+    this.authService.requestAuth(username, password).subscribe( error =>{
+      console.log(error);
+      this.form.reset();
+    });
+      
+    
 
   }
 

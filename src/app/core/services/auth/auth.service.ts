@@ -16,12 +16,18 @@ export class AuthService {
   urlApi = 'https://java.bocetos.co/userred-0.0.1-SNAPSHOT/auth';
 
   constructor(private http: HttpClient, private store: Store ,private tokenService: TokenService, private router: Router) {}
-  private requestAuth(username: string, password: string): Observable<Token> {
+
+
+  requestAuth(username: string, password: string): Observable<Token> {
     const raw = `{\n	\"username\": \"${username}\",\n	\"password\": \"${password}\"\n}`;
     return this.http.post<Token>(this.urlApi, raw).pipe(
       tap((data) => {
         const token = data.token;
-        this.tokenService.saveToken(token);
+        if (token){
+          this.tokenService.saveToken(token);
+          this.setAuthStore(username);
+          this.router.navigate(['/dashboard']);
+        }
       })
     );
   }
@@ -30,11 +36,5 @@ export class AuthService {
     this.store.dispatch(new SetUserAction(user));
   }
 
-  login(username: string, password: string): void {
-    this.requestAuth(username, password).subscribe();
-    this.setAuthStore(username);
-    this.router.navigate(['/dashboard']);
-
-
-  }
+  
 }
