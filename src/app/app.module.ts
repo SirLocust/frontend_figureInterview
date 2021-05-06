@@ -1,3 +1,4 @@
+import { DashBoardModule } from './dash-board/dash-board.module';
 import { AuthInterceptor } from './auth.interceptor';
 import { appReducers } from './app.reducer';
 import { CoreModule } from './core/core.module';
@@ -24,6 +25,7 @@ import { environment } from '../environments/environment';
     CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DashBoardModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

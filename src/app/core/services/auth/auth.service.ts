@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {tap} from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   urlApi = 'https://java.bocetos.co/userred-0.0.1-SNAPSHOT/auth';
 
-  constructor(private http: HttpClient, private store: Store ,private tokenService: TokenService) {}
+  constructor(private http: HttpClient, private store: Store ,private tokenService: TokenService, private router: Router) {}
   private requestAuth(username: string, password: string): Observable<Token> {
     const raw = `{\n	\"username\": \"${username}\",\n	\"password\": \"${password}\"\n}`;
     return this.http.post<Token>(this.urlApi, raw).pipe(
@@ -32,6 +33,8 @@ export class AuthService {
   login(username: string, password: string): void {
     this.requestAuth(username, password).subscribe();
     this.setAuthStore(username);
+    this.router.navigate(['/dashboard']);
+
 
   }
 }
