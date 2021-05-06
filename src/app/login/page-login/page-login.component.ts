@@ -9,6 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PageLoginComponent implements OnInit {
   form: FormGroup ;
+  formIncorrect = false
+  errosMessages ={
+    error: 'Usuario o Contrase;a incorrecta'
+  }
   constructor(private authService: AuthService) {
     this.form = this.buildForm();
   }
@@ -29,9 +33,10 @@ export class PageLoginComponent implements OnInit {
     const username = this.form.get('username')?.value;
     const password = this.form.get('password')?.value;
     
-    this.authService.requestAuth(username, password).subscribe( error =>{
+    this.authService.requestAuth(username, password).subscribe( data => {} , error => {
       console.log(error);
       this.form.reset();
+      this.formIncorrect = true;
     });
       
     

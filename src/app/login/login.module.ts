@@ -1,3 +1,4 @@
+import { ShareModule } from './../share/share.module';
 import { LoginRoutingModule } from './login-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    ShareModule
   ],
   exports: [
     PageLoginComponent,

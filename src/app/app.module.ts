@@ -1,3 +1,4 @@
+import { ShareModule } from './share/share.module';
 import { DashBoardModule } from './dash-board/dash-board.module';
 import { AuthInterceptor } from './auth.interceptor';
 import { appReducers } from './app.reducer';
@@ -5,7 +6,7 @@ import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     HttpClientModule,
     DashBoardModule,
+    ShareModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
