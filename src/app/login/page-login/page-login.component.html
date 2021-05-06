@@ -2,9 +2,10 @@
   <div class="flex justify-content-center align-items-center loginBox">
     <form
       [formGroup]="form"
+      (ngSubmit)="login()"
       class="flex flex-column justify-content-center align-items-center"
     >
-      <div class="loginLabel flex-column">
+      <div class="loginLabel flex flex-column">
         <label for="">UserName</label>
         <input type="text" formControlName="username" />
       </div>
@@ -12,7 +13,7 @@
         <label for="">Password</label>
         <input type="text" formControlName="password" />
       </div>
-      <button type="button">Ingresar</button>
+      <button [disabled]="!form.valid">Ingresar</button>
     </form>
   </div>
 </div>
