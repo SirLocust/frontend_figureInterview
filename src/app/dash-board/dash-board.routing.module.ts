@@ -1,4 +1,4 @@
-import { ProfileComponent } from './components/profile/profile.component';
+
 import { PageDashboardComponent } from './page-dashboard/page-dashboard.component';
 
 import { NgModule } from '@angular/core';
@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '',
    component: PageDashboardComponent,
    children: [
-    { path: 'profile' , component: ProfileComponent},
+    { path: 'profile' , loadChildren: () => import('../profile/profile.module').then((m)=> m.ProfileModule)},
     { path: '**', redirectTo: '/dashboard/profile' , pathMatch: 'full' },
    ]
 

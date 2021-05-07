@@ -15,6 +15,7 @@ import { StoreModule } from '@ngrx/store';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ProfileModule } from './profile/profile.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     DashBoardModule,
     ShareModule,
+    ProfileModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
