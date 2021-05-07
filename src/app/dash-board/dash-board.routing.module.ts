@@ -1,10 +1,19 @@
+import { ProfileComponent } from './components/profile/profile.component';
 import { PageDashboardComponent } from './page-dashboard/page-dashboard.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: PageDashboardComponent },
+  { path: '',
+   component: PageDashboardComponent,
+   children: [
+    { path: 'profile' , component: ProfileComponent},
+    { path: '**', redirectTo: '/dashboard/profile' , pathMatch: 'full' },
+   ]
+
+
+  },
   { path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

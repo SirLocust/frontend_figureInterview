@@ -1,3 +1,4 @@
+import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardRoutingModule } from './dash-board.routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,11 +10,13 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     PageDashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    
   ]
 })
 export class DashBoardModule { }

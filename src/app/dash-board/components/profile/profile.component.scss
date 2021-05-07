@@ -1,0 +1,14 @@
+:host{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  box-sizing: border-box;
+  background-color: bisque;
+  width: 80%;
+  margin: auto;
+  height: 35em;
+  padding: 2em;
+}

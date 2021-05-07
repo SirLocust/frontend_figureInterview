@@ -7,10 +7,7 @@ export interface AuthState{
 }
 
 const initState: AuthState ={
-  user: {
-    username: undefined,
-
-  }
+  user: undefined,
 };
 
 export function authReducer( state = initState, action: fromAuth.actions): AuthState{
