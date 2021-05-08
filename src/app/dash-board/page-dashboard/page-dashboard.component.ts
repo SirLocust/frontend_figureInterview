@@ -11,7 +11,7 @@ export class PageDashboardComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
-    this.profileService.initProfileListner();
+    this.profileService.initProfileListener();
   }
 
 }

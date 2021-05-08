@@ -23,7 +23,7 @@ export class ProfileService {
     });
   }
 
-  initProfileListner(): void{
+  initProfileListener(): void{
     this.addProfileToStore();
   }
 
