@@ -9,6 +9,7 @@ const routes: Routes = [
    component: PageDashboardComponent,
    children: [
     { path: 'profile' , loadChildren: () => import('../profile/profile.module').then((m)=> m.ProfileModule)},
+    { path: 'figures', loadChildren: ()=> import('../figure/figure.module').then((m) => m.FigureModule)},
     { path: '**', redirectTo: '/dashboard/profile' , pathMatch: 'full' },
    ]
 

@@ -1,0 +1,31 @@
+.cardFigure{
+  border: 1px solid black;
+  width: 24em;
+  height: 15em;
+  padding: 0.7em;
+  border-radius: 0.4em;
+}
+.cardFigure_title{
+  font-size: 1em;
+}
+.cardFigure_grid{
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(5,auto);
+  grid-template-rows: repeat(5,auto);
+  column-gap: 2px;
+  row-gap: 0.3em;
+}
+.cardFigure_item{
+  justify-self: center;
+  width: 3.5em;
+  height: 1.7em;
+  border-radius: 0.3em;
+}
+.itemSelect{
+  border: 1.4px solid rgb(113, 255, 113) ;
+  background-color: rgb(48, 158, 255);
+}
+.itemUnselect{
+  background-color: rgb(176, 176, 176);
+}

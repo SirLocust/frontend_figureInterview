@@ -1,6 +1,6 @@
 import * as fromAuth from '@core/services/auth/auth.reducer';
 import * as fromProfile from '@core/services/profile/profile.reducer';
-import * as fromFigures from '@core/services/figures/figures.reducer'
+import * as fromFigures from '@core/services/figures/figures.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {

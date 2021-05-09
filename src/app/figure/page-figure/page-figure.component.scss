@@ -1,0 +1,32 @@
+@import '../../mixins';
+
+:host{
+  width: 100%;
+  @include flexCenterHost();
+}
+
+.container{
+  margin-top: 10em;
+  width: 80%;
+  padding: 2em;
+  min-height: 1000px;
+  @include boxShadow();
+  
+}
+.ContainerRoutes{
+  margin-top: 8em;
+  padding: 2em;
+  height: 100%;
+  width: 100%;
+  @include flexCenterHost();
+}
+button{
+  
+  padding: 1em;
+  border: 0px;
+  background-color: white;
+  z-index: 9;
+}
+button:hover{
+  border-bottom: 1px solid blueviolet;
+}

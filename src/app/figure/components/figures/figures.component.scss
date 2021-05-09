@@ -1,0 +1,11 @@
+:host{
+  height: 100%;
+  width: 100%;
+}
+
+.container_grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 2em;
+  row-gap: 2em;
+}

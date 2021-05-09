@@ -1,12 +1,12 @@
 import { SetFiguresAction } from './figures.actions';
-import { Figure, FigureObj } from './../models/figure';
+import { Figure} from './../models/figure';
 import { AppState } from './../../../app.reducer';
 import { ResponseFigures } from './../models/responseFigures';
 import { Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
