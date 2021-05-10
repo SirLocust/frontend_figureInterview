@@ -43,9 +43,34 @@ export class FiguresService {
     );
   }
 
+  private getAllFiguresGroupById(id: string): Observable<Figure[]>{
+    return this.http.get<ResponseFigures>(`${this.apiUrl}/figure/group/${id}`)
+    .pipe(
+      map((data) => {
+        const dataNew = data.data.map((figureObj) => {
+          return new Figure(figureObj);
+        });
+        return dataNew;
+      })
+    );
+  }
+
+  addFiguresGroupByIdToStore(id: string): void{
+    this.getAllFiguresGroupById(id).subscribe( figuresGroup => {
+      this.store.dispatch(new SetFiguresAction( figuresGroup));
+    });
+  }
+
+  private deleteFigure():void{
+    
+  }
+
   addFiguresToStore(): void {
     this.FiguresListenerSubcription = this.getAllFigures().subscribe(
       (figures) => {
+        if (!figures) {
+          return;
+        }
         this.store.dispatch(new SetFiguresAction(figures));
       }
     );
@@ -54,6 +79,9 @@ export class FiguresService {
   addFiguresGroupToStore(): void {
     this.FiguresGroupListenerSubcription = this.getAllFiguresGroup().subscribe(
       (figuresGroup) => {
+        if (!figuresGroup) {
+          return;
+        }
         this.store.dispatch(new SetFiguresGroupAction(figuresGroup));
       }
     );

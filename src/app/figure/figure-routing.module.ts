@@ -1,12 +1,19 @@
+import { FiguresGroupComponent } from './componentes/figures-group/figures-group.component';
 import { FiguresComponent } from './components/figures/figures.component';
 import { PageFigureComponent } from './page-figure/page-figure.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: PageFigureComponent , children: [
-    {path: 'allFigures' , component: FiguresComponent}
-  ] },
+  {
+    path: '',
+    component: PageFigureComponent,
+    children: [
+      { path: 'allfigures', component: FiguresComponent },
+      {path : 'allgroups', component: FiguresGroupComponent},
+      { path: '**', redirectTo: 'allfigures', pathMatch: 'full' },
+    ],
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

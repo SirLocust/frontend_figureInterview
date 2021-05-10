@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FiguresService } from '@core/services/figures/figures.service';
 
 @Component({
   selector: 'app-page-figure',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageFigureComponent implements OnInit {
 
-  constructor() { }
+  constructor(private figuresServices: FiguresService) { }
 
   ngOnInit(): void {
+    this.figuresServices.initFiguresListener();
   }
 
 }

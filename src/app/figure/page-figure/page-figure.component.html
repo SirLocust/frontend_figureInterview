@@ -1,8 +1,16 @@
 <div class="container">
   <div>
-    <button [routerLink]="'/dashboard/figures/allFigures'">
+    <button
+      [routerLink]="'/dashboard/figures/allfigures'"
+      routerLinkActive="button_active"
+    >
       Listar Figuras</button
-    ><button>Listar Modalidades</button>
+    ><button
+      [routerLink]="'/dashboard/figures/allgroups'"
+      routerLinkActive="button_active"
+    >
+      Listar Modalidades
+    </button>
   </div>
   <hr />
   <div class="ContainerRoutes">
