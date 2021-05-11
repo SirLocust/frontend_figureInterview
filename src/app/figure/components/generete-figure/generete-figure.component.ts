@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class GenereteFigureComponent implements OnInit {
   positions: number[] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   form: FormGroup;
+  idGroupFigure:string;
   constructor() {
     
    }

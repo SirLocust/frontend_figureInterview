@@ -9,6 +9,7 @@ import { FiguresComponent } from './components/figures/figures.component';
 import { FiguresListViewComponent } from './components/figures-list-view/figures-list-view.component';
 import { FiguresGroupComponent } from './components/figures-group/figures-group.component';
 import { GenereteFigureComponent } from './components/generete-figure/generete-figure.component';
+import { SelectFigureGroupComponent } from './components/select-figure-group/select-figure-group.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GenereteFigureComponent } from './components/generete-figure/generete-f
     FiguresComponent,
     FiguresListViewComponent,
     FiguresGroupComponent,
-    GenereteFigureComponent
+    GenereteFigureComponent,
+    SelectFigureGroupComponent
   ],
   imports: [
     CommonModule,

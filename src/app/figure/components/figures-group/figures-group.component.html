@@ -1,10 +1,4 @@
-<div class="my-2">
-  <form [formGroup]="form">
-    <select formControlName="formGroupID">
-      <ng-container *ngFor="let figureGroup of tmpFiguresGroup">
-        <option [value]="figureGroup.id">{{ figureGroup.name }}</option>
-      </ng-container>
-    </select>
-  </form>
-</div>
+<app-select-figure-group
+  (idGroup)="callService($event)"
+></app-select-figure-group>
 <app-figures-list-view></app-figures-list-view>
