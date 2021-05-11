@@ -1,0 +1,19 @@
+<div></div>
+
+<div>A;adir nueva figura</div>
+<form action="">
+  <input type="text" placeholder="Nombre de Figura" />
+  <div class="grid">
+    <ng-container *ngFor="let position of positions; index as i">
+      <div
+        (click)="toggleItem(i)"
+        class="item"
+        [class.itemSelect]="position == 1"
+        [class.itemUnselect]="position == 0"
+      ></div>
+    </ng-container>
+  </div>
+  <div>
+    <button>Save</button>
+  </div>
+</form>

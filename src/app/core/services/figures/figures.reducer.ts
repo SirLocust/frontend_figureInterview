@@ -18,6 +18,10 @@ export function figuresReducer(
       return {
         figures: [...action.figures],
       };
+    case fromFigures.SET_FIGURE:
+      return{
+        figures: [action.figure, ...state.figures]
+      };
     default:
       return state;
   }

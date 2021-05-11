@@ -1,0 +1,23 @@
+.grid{
+  width: 80%;
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(5,auto);
+  grid-template-rows: repeat(5,auto);
+  column-gap: 2em;
+  row-gap: 1em;
+}
+
+.item{
+  justify-self: center;
+  width: 12em;
+  height: 2em;
+  border-radius: 0.3em;
+}
+.itemSelect{
+  border: 1.4px solid rgb(113, 255, 113) ;
+  background-color: rgb(48, 158, 255);
+}
+.itemUnselect{
+  background-color: rgb(176, 176, 176);
+}

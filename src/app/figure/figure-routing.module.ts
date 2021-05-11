@@ -1,4 +1,5 @@
-import { FiguresGroupComponent } from './componentes/figures-group/figures-group.component';
+import { GenereteFigureComponent } from './components/generete-figure/generete-figure.component';
+import { FiguresGroupComponent } from './components/figures-group/figures-group.component';
 import { FiguresComponent } from './components/figures/figures.component';
 import { PageFigureComponent } from './page-figure/page-figure.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,8 @@ const routes: Routes = [
     children: [
       { path: 'allfigures', component: FiguresComponent },
       {path : 'allgroups', component: FiguresGroupComponent},
+      {path : 'generete', component: GenereteFigureComponent },
+
       { path: '**', redirectTo: 'allfigures', pathMatch: 'full' },
     ],
   },

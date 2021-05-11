@@ -1,7 +1,8 @@
+import { FigureObj } from '@core/services/models/figure';
 import { SetFiguresGroupAction } from './figuresGroup.actions';
 import { ResponseFiguresGroup } from './../models/responseFiguresGroup';
 import { FigureGroup } from './../models/figureGroup';
-import { SetFiguresAction } from './figures.actions';
+import { SetFigureAction, SetFiguresAction } from './figures.actions';
 import { Figure} from './../models/figure';
 import { AppState } from './../../../app.reducer';
 import { ResponseFigures } from './../models/responseFigures';
@@ -43,6 +44,22 @@ export class FiguresService {
     );
   }
 
+  // no encontre bien el tipo de respuesta de la api por eso deje any en este caso
+  private createFigure(figure: FigureObj): Observable<any>{
+    return this.http.post(`${this.apiUrl}/figure`, figure ,{
+      responseType: 'json',
+    });
+  }
+
+  addFigureToStore(figure: FigureObj): void {
+    this.createFigure(figure).subscribe( data =>{
+      if(!data){
+        return;
+      }
+      this.store.dispatch( new SetFigureAction(new Figure(figure)));
+    });
+  }
+
   private getAllFiguresGroupById(id: string): Observable<Figure[]>{
     return this.http.get<ResponseFigures>(`${this.apiUrl}/figure/group/${id}`)
     .pipe(
@@ -61,7 +78,7 @@ export class FiguresService {
     });
   }
 
-  private deleteFigure():void{
+  private deleteFigure(): void{
     
   }
 
