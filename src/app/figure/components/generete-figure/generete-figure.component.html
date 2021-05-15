@@ -5,8 +5,12 @@
 </div>
 
 <div>A;adir nueva figura</div>
-<form action="">
-  <input type="text" placeholder="Nombre de Figura" />
+<form [formGroup]="form" (ngSubmit)="createFigure()">
+  <input
+    type="text"
+    placeholder="Nombre de Figura"
+    formControlName="nameFigure"
+  />
   <div class="grid">
     <ng-container *ngFor="let position of positions; index as i">
       <div
@@ -18,6 +22,6 @@
     </ng-container>
   </div>
   <div>
-    <button>Save</button>
+    <button [disabled]="!form.valid">Save</button>
   </div>
 </form>

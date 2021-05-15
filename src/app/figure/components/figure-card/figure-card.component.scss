@@ -5,6 +5,17 @@
   padding: 0.7em;
   border-radius: 0.4em;
 }
+.cardHeader{
+  display: flex;
+  display: c;
+  justify-content: space-between;
+  align-content: center;
+  span{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
 .cardFigure_title{
   font-size: 1em;
 }

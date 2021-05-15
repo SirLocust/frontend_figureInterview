@@ -1,5 +1,8 @@
 <div class="cardFigure">
-  <h1 class="cardFigure_title">{{ figure.figurename }}</h1>
+  <div class="cardHeader">
+    <h1 class="cardFigure_title">{{ figure.figurename }}</h1>
+    <span>X</span>
+  </div>
   <div class="cardFigure_grid">
     <ng-container *ngFor="let item of figure.positions">
       <div

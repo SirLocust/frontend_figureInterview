@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FigureObj } from '@core/services/models/figure';
 import { SetFiguresGroupAction } from './figuresGroup.actions';
 import { ResponseFiguresGroup } from './../models/responseFiguresGroup';
@@ -20,7 +21,7 @@ export class FiguresService {
   FiguresListenerSubcription: Subscription = new Subscription();
   FiguresGroupListenerSubcription: Subscription = new Subscription();
 
-  constructor(private http: HttpClient, private store: Store<AppState>) {}
+  constructor(private http: HttpClient, private store: Store<AppState>, private router:Router) {}
 
   private getAllFigures(): Observable<Figure[]> {
     return this.http.get<ResponseFigures>(`${this.apiUrl}/figure`).pipe(
@@ -57,6 +58,7 @@ export class FiguresService {
         return;
       }
       this.store.dispatch( new SetFigureAction(new Figure(figure)));
+      this.router.navigate(['dashboard/figures']);
     });
   }
 
@@ -79,6 +81,9 @@ export class FiguresService {
   }
 
   private deleteFigure(): void{
+    
+  }
+  removeFigureToStore():void{
     
   }
 

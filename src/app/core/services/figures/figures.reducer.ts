@@ -22,6 +22,10 @@ export function figuresReducer(
       return{
         figures: [action.figure, ...state.figures]
       };
+    case fromFigures.REMOVE_FIGURE:
+      return{
+        figures: [...state.figures]
+      };
     default:
       return state;
   }
