@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./figure-card.component.scss']
 })
 export class FigureCardComponent implements OnInit {
-  @Input() figure: FigureObj;
+  @Input() figure: Figure;
   tmpFigure: FigureObj = {
     id_grupofigure: 2,
     figurename: 'Cuatro Esquinas',
