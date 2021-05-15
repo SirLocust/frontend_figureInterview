@@ -22,7 +22,9 @@
     ],
     "paths":{
       "@core/*":["src/app/core/*"],
-      "@share/*":["src/app/share/*"]
+      "@share/*":["src/app/share/*"],
+      "@environments/*":["src/environments/*"]
+
     }
   },
   "angularCompilerOptions": {

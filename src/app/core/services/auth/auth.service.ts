@@ -8,21 +8,21 @@ import { Store } from '@ngrx/store';
 import {tap} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import {environment } from '@environments/environment'
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  urlApi = 'https://java.bocetos.co/userred-0.0.1-SNAPSHOT/auth';
-
+  urlApi = environment.api_url;
   constructor(private http: HttpClient, private store: Store ,private tokenService: TokenService, private router: Router) {}
 
 
   requestAuth(username: string, password: string): Observable<Token> {
     const raw = `{\n	\"username\": \"${username}\",\n	\"password\": \"${password}\"\n}`;
-    return this.http.post<Token>(this.urlApi, raw).pipe(
+    return this.http.post<Token>(`${this.urlApi}/auth`, raw).pipe(
       tap((data) => {
-        const token = data.token;
+        const token = data.Token;
         if (token){
           this.tokenService.saveToken(token);
           this.setAuthStore(username);

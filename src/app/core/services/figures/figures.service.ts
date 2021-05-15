@@ -1,3 +1,4 @@
+import { environment } from '@environments/environment';
 import { Router } from '@angular/router';
 import { FigureObj } from '@core/services/models/figure';
 import { SetFiguresGroupAction } from './figuresGroup.actions';
@@ -17,29 +18,25 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FiguresService {
-  apiUrl = 'https://java.bocetos.co/gamered-0.0.1-SNAPSHOT';
+  apiUrl = environment.api_url;
   FiguresListenerSubcription: Subscription = new Subscription();
   FiguresGroupListenerSubcription: Subscription = new Subscription();
 
-  constructor(private http: HttpClient, private store: Store<AppState>, private router:Router) {}
+  constructor(private http: HttpClient, private store: Store<AppState>, private router: Router) {}
 
   private getAllFigures(): Observable<Figure[]> {
     return this.http.get<ResponseFigures>(`${this.apiUrl}/figure`).pipe(
       map((data) => {
-        const dataNew = data.data.map((figureObj) => {
-          return new Figure(figureObj);
-        });
+        const dataNew = data.data.map((figureObj) =>  new Figure(figureObj));
         return dataNew;
       })
     );
   }
 
   private getAllFiguresGroup(): Observable<FigureGroup[]> {
-    return this.http.get<ResponseFiguresGroup>(`${this.apiUrl}/figure`).pipe(
+    return this.http.get<ResponseFiguresGroup>(`${this.apiUrl}/groupfigure`).pipe(
       map((data) => {
-        const dataNew = data.data.map((figuresGroupObj) => {
-          return new FigureGroup(figuresGroupObj);
-        });
+        const dataNew = data.data.map((figuresGroupObj) => new FigureGroup(figuresGroupObj));
         return dataNew;
       })
     );
