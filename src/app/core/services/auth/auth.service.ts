@@ -22,6 +22,7 @@ export class AuthService {
     const raw = `{\n	\"username\": \"${username}\",\n	\"password\": \"${password}\"\n}`;
     return this.http.post<Token>(`${this.urlApi}/auth`, raw).pipe(
       tap((data) => {
+        console.log("hola")
         const token = data.Token;
         if (token){
           this.tokenService.saveToken(token);

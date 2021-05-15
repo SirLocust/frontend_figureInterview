@@ -1,27 +1,30 @@
 <div class="container flex justify-content-center align-items-center">
-  <div class="flex justify-content-center align-items-center flex-column">
+  <div class="flex align-items-start flex-column" *ngIf="profile">
     <app-profile-item
       class="my-2"
       [title]="'Nombre'"
-      [valueTitle]="'SuperAdmin'"
+      [valueTitle]="profile.firstName"
       >#</app-profile-item
     >
     <app-profile-item
       class="my-2"
-      [title]="'Nombre'"
-      [valueTitle]="'SuperAdmin'"
+      [title]="'Apellidos'"
+      [valueTitle]="profile.lastName"
       >#</app-profile-item
     >
     <app-profile-item
       class="my-2"
-      [title]="'Nombre'"
-      [valueTitle]="'SuperAdmin'"
+      [title]="'Nombre del usuario'"
+      [valueTitle]="profile.username"
+      >#</app-profile-item
+    >
+    <app-profile-item class="my-2" [title]="'rol'" [valueTitle]="profile.rol"
       >#</app-profile-item
     >
     <app-profile-item
       class="my-2"
-      [title]="'Nombre'"
-      [valueTitle]="'SuperAdmin'"
+      [title]="'Fecha de creacion'"
+      [valueTitle]="profile.createdDate"
       >#</app-profile-item
     >
   </div>
