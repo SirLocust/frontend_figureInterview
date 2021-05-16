@@ -1,10 +1,18 @@
 <nav class="sideBar flex">
   <div class="sideBar-Ul">
-    <div class="sideBar-Ul-li"><span>Perfil</span></div>
-    <div class="sideBar-Ul-li" routerLink="/dashboard/figures">
-      <span>Listar Figuras</span>
+    <div *ngIf="username" class="sideBar-profile">
+      <p>{{ username }}</p>
     </div>
-    <div class="sideBar-Ul-li"><span></span></div>
-    <div class="sideBar-Ul-li"><span></span></div>
+    <div class="sideBar-Ul-li" routerLink="/dashboard/profile">
+      <fa-icon [icon]="faAddressBook"></fa-icon>
+      <span>Perfil</span>
+    </div>
+    <div class="sideBar-Ul-li" routerLink="/dashboard/figures">
+      <fa-icon [icon]="faColumns"></fa-icon>
+
+      <span>Figuras y Modalidades</span>
+    </div>
+    <!-- <div class="sideBar-Ul-li"><span></span></div>
+    <div class="sideBar-Ul-li"><span></span></div> -->
   </div>
 </nav>

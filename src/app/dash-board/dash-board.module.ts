@@ -1,3 +1,4 @@
+import { ShareModule } from './../share/share.module';
 import { DashboardRoutingModule } from './dash-board.routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,6 +7,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [PageDashboardComponent, SidebarComponent],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [CommonModule, DashboardRoutingModule,ShareModule],
 })
 export class DashBoardModule {}

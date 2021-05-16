@@ -1,25 +1,35 @@
 .sideBar{
-  background-color: gray;
+  background-color: white;
+  border-right: 1px solid rgb(172, 172, 172);
   height: 100%;
   width: 100%;
-  margin: 0;
+  
  
   
 }
 .sideBar-Ul{
-  margin-top: 2em;
+
+  margin-top: 10em;
     
     
     
     width: 100%;
 }
+.sideBar-profile{
+  padding: 1em 0.6em;
+  
+
+  color: rgb(172, 172, 172);
+  width: 100%;
+  border-bottom: solid 1px rgb(172, 172, 172);
+}
 .sideBar-Ul-li{
   cursor: pointer;
   padding: 1em;
-  box-sizing: border-box;
+  
   width: 100%;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px rgb(172, 172, 172);
   span{
-    // margin-left: 1em;
+     margin-left: 0.5em;
   }
 }
