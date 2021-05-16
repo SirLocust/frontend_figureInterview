@@ -22,6 +22,9 @@
       <button [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'">
         Ingresar
       </button>
+      <button [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'">
+        <fa-icon [icon]="faSpinner" [spin]="true"> </fa-icon>
+      </button>
     </form>
   </div>
 </div>

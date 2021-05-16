@@ -4,9 +4,10 @@
   ></app-select-figure-group>
 </div>
 
-<div>A;adir nueva figura</div>
-<form [formGroup]="form" (ngSubmit)="createFigure()">
+<div class="title">Añadir nueva figura</div>
+<form [formGroup]="form" (ngSubmit)="createFigure()" class="w-100">
   <input
+    class="input"
     type="text"
     placeholder="Nombre de Figura"
     formControlName="nameFigure"
@@ -18,10 +19,11 @@
         class="item"
         [class.itemSelect]="position == 1"
         [class.itemUnselect]="position == 0"
+        [class.itemNonSelect]="i == 12"
       ></div>
     </ng-container>
   </div>
-  <div>
-    <button [disabled]="!form.valid">Save</button>
+  <div class="flex justify-content-end w-100">
+    <button [disabled]="!form.valid">Guardar</button>
   </div>
 </form>

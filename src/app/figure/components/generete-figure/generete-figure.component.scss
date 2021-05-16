@@ -1,11 +1,23 @@
 .grid{
   width: 80%;
-  margin-top: 1em;
+  margin-top: 2em;
   display: grid;
   grid-template-columns: repeat(5,auto);
   grid-template-rows: repeat(5,auto);
-  column-gap: 2em;
-  row-gap: 1em;
+  column-gap: 1.5em;
+  row-gap: 1.5em;
+}
+
+
+.title{
+  padding: 0.5em;
+  width: 100%;
+  background-color: rgb(255, 109, 109);
+  border: 1px solid silver;
+  border-radius: 0.2em;
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  text-align: center;
 }
 
 .item{
@@ -20,4 +32,26 @@
 }
 .itemUnselect{
   background-color: rgb(176, 176, 176);
+}
+
+.itemNonSelect{
+  background-color: rgb(75, 75, 75);
+  border: 2px solid red;
+}
+
+.input{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.4em;
+  outline: none;
+}
+
+button{
+  margin-top: 1em;
+  background-color: silver;
+  padding: 1em 3em;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid silver;
 }

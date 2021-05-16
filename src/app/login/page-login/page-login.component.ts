@@ -1,6 +1,7 @@
 import { AuthService } from './../../core/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-page-login',
@@ -9,7 +10,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class PageLoginComponent implements OnInit {
   form: FormGroup ;
-  formIncorrect = false
+  formIncorrect = false;
+  faSpinner = faSpinner;
   errosMessages ={
     error: 'Usuario o Contrase;a incorrecta'
   }
