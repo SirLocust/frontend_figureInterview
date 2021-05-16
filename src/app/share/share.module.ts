@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorsComponent } from './errors/errors.component';
@@ -9,10 +10,12 @@ import { ErrorsComponent } from './errors/errors.component';
     ErrorsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
-    ErrorsComponent
+    ErrorsComponent,
+    FontAwesomeModule
   ]
 })
 export class ShareModule { }

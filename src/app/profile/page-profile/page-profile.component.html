@@ -4,29 +4,33 @@
       class="my-2"
       [title]="'Nombre'"
       [valueTitle]="profile.firstName"
-      >#</app-profile-item
     >
+      <fa-icon [icon]="['fas', 'user']"></fa-icon>
+    </app-profile-item>
     <app-profile-item
       class="my-2"
       [title]="'Apellidos'"
       [valueTitle]="profile.lastName"
-      >#</app-profile-item
     >
+      <fa-icon [icon]="['fas', 'users']"></fa-icon>
+    </app-profile-item>
     <app-profile-item
       class="my-2"
       [title]="'Nombre del usuario'"
       [valueTitle]="profile.username"
-      >#</app-profile-item
     >
-    <app-profile-item class="my-2" [title]="'rol'" [valueTitle]="profile.rol"
-      >#</app-profile-item
-    >
+      <fa-icon [icon]="['fas', 'angle-double-left']"></fa-icon>
+    </app-profile-item>
+    <app-profile-item class="my-2" [title]="'rol'" [valueTitle]="profile.rol">
+      <fa-icon [icon]="['fas', 'couch']"></fa-icon>
+    </app-profile-item>
     <app-profile-item
       class="my-2"
       [title]="'Fecha de creacion'"
       [valueTitle]="profile.createdDate"
-      >#</app-profile-item
     >
+      <fa-icon [icon]="['fas', 'calendar']"></fa-icon>
+    </app-profile-item>
   </div>
 
   <div class="flex justify-content-center align-items-center">
