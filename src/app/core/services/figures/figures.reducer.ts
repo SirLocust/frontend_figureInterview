@@ -24,7 +24,7 @@ export function figuresReducer(
       };
     case fromFigures.REMOVE_FIGURE:
       return{
-        figures: [...state.figures]
+        figures: state.figures.filter( figure => figure.id !== action.id)
       };
     default:
       return state;

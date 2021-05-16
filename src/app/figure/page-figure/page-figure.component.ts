@@ -8,10 +8,10 @@ import { FiguresService } from '@core/services/figures/figures.service';
 })
 export class PageFigureComponent implements OnInit {
 
-  constructor(private figuresServices: FiguresService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.figuresServices.initFiguresListener();
+    
   }
 
 }

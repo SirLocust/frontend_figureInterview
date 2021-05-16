@@ -4,7 +4,7 @@ import { FigureObj } from '@core/services/models/figure';
 import { SetFiguresGroupAction } from './figuresGroup.actions';
 import { ResponseFiguresGroup } from './../models/responseFiguresGroup';
 import { FigureGroup } from './../models/figureGroup';
-import { SetFigureAction, SetFiguresAction } from './figures.actions';
+import { RemoveFigureAction, SetFigureAction, SetFiguresAction } from './figures.actions';
 import { Figure} from './../models/figure';
 import { AppState } from './../../../app.reducer';
 import { ResponseFigures } from './../models/responseFigures';
@@ -18,16 +18,19 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FiguresService {
-  apiUrl = environment.api_url;
-  FiguresListenerSubcription: Subscription = new Subscription();
-  FiguresGroupListenerSubcription: Subscription = new Subscription();
+  private apiUrl = environment.api_url;
+  private FiguresListenerSubcription: Subscription = new Subscription();
+  private FiguresGroupListenerSubcription: Subscription = new Subscription();
 
   constructor(private http: HttpClient, private store: Store<AppState>, private router: Router) {}
 
   private getAllFigures(): Observable<Figure[]> {
     return this.http.get<ResponseFigures>(`${this.apiUrl}/figure`).pipe(
       map((data) => {
+        // console.log(data.data)
         const dataNew = data.data.map((figureObj) =>  new Figure(figureObj));
+        // console.log(dataNew);
+
         return dataNew;
       })
     );
@@ -77,11 +80,20 @@ export class FiguresService {
     });
   }
 
-  private deleteFigure(): void{
-    
+  private deleteFigure(id : number): Observable<ResponseFigures>{
+    return this.http.delete<ResponseFigures>(`${this.apiUrl}/figure/${id}`);
   }
-  removeFigureToStore():void{
-    
+  removeFigureToStore(id: number):void{
+    this.deleteFigure(id).subscribe( data => {
+      console.log(data.errors)
+      if(data.errors){
+        
+        return
+      }
+      this.store.dispatch( new RemoveFigureAction(id))
+    }, error => {
+
+    } )
   }
 
   addFiguresToStore(): void {
@@ -108,7 +120,19 @@ export class FiguresService {
 
   initFiguresListener(): void {
     this.addFiguresToStore();
+    
+  }
+  initFiguresGroupListener(): void{
     this.addFiguresGroupToStore();
+  }
+
+  canselFiguresGroupListener(): void {
+    this.FiguresGroupListenerSubcription.unsubscribe();
+  
+  }
+
+  canselFiguresListener(): void {
+    this.FiguresListenerSubcription.unsubscribe();
   }
 
   canselSubscriptions(): void {

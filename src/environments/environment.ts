@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:8080'
+  api_url: 'https://apifigure.herokuapp.com'
 };
 
 /*
@@ -15,3 +15,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// 'https://apifigure.herokuapp.com'
+// http://localhost:8080

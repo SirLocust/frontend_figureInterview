@@ -42,10 +42,12 @@ export class GenereteFigureComponent implements OnInit {
       return;
     }
     const figureNew: FigureObj = {
-      id_grupofigure: Number(this.idGroupFigure),
+      idFigureGroup: Number(this.idGroupFigure),
       positions: this.positions,
-      figurename: this.form.get('nameFigure').value,
+      
+      figureName: this.form.get('nameFigure').value,
     };
+    
     this.figureService.addFigureToStore(figureNew);
   }
 

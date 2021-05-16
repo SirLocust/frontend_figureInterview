@@ -1,7 +1,7 @@
 <div class="cardFigure">
   <div class="cardHeader">
     <h1 class="cardFigure_title">{{ figure.name }}</h1>
-    <span>X</span>
+    <span (click)="removeFigure(figure.id)">X</span>
   </div>
   <div class="cardFigure_grid">
     <ng-container *ngFor="let item of figure.positions">

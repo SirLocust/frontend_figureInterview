@@ -2,15 +2,20 @@ export class Figure {
   groupFigureId: number;
   name: string;
   positions: number[];
+  id: number;
   constructor( figureObj: FigureObj) {
-    this.groupFigureId = figureObj.id_grupofigure;
-    this.name = figureObj.figurename;
+    this.groupFigureId = figureObj.idFigureGroup;
+    this.name = figureObj.figureName;
     this.positions = figureObj.positions;
+    this.id = figureObj.id || 0;
   }
 }
 
 export interface FigureObj {
-  id_grupofigure: number;
-  figurename: string;
+  idFigureGroup: number;
+  figureName: string;
   positions: number[];
+  id?: number;
 }
+
+

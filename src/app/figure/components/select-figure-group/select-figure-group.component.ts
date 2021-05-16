@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FiguresService } from '@core/services/figures/figures.service';
+import { Component, EventEmitter, OnInit, Output, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FigureGroup, FigureGroupObj } from '@core/services/models/figureGroup';
 import { Store } from '@ngrx/store';
@@ -10,49 +11,32 @@ import { AppState } from 'src/app/app.reducer';
   templateUrl: './select-figure-group.component.html',
   styleUrls: ['./select-figure-group.component.scss']
 })
-export class SelectFigureGroupComponent implements OnInit {
+export class SelectFigureGroupComponent implements OnInit ,OnDestroy {
   @Output() idGroup: EventEmitter<string> = new EventEmitter();
   figuresGroup: FigureGroup[];
-  tmpFiguresGroup: FigureGroupObj[] = [
-    {
-      id: 1,
-      name: "Modalidad 1",
-      oportunity: 1,
-      closegame_at: 1
-    },
-    {
-      id: 2,
-      name: "Modalidad 2",
-      oportunity: 1,
-      closegame_at: 1
-    },
-    {
-      id: 3,
-      name: "Modalidad 3",
-      oportunity: 1,
-      closegame_at: 1
-    },
-    {
-      id: 4,
-      name: "Modalidad 4",
-      oportunity: 1,
-      closegame_at: 1
-    }
-  ];
+  
   form: FormGroup;
   constructor(
     private store: Store<AppState>,
+    private figureService: FiguresService,
   ) { 
     this.form = this.buildForm();
     this.form.valueChanges.subscribe( (data) => {
       this.emmitValue(data.formGroupID);
     });
+    this.figureService.initFiguresGroupListener();
   }
+  
 
   ngOnInit(): void {
     this.store.select('figuresGroup').subscribe( data => {
       this.figuresGroup = data.figuresGroup;
     });
+  }
+
+  ngOnDestroy(): void {
+    console.log("destroy select")
+    this.figureService.canselFiguresGroupListener();
   }
 
   emmitValue(id :string): void{

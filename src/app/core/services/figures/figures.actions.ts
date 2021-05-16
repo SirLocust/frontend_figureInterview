@@ -19,7 +19,7 @@ export class SetFigureAction implements Action{
 
 export class RemoveFigureAction implements Action{
   readonly type = REMOVE_FIGURE;
-  constructor(public figure: Figure){}
+  constructor(public id: number){}
 }
 
 

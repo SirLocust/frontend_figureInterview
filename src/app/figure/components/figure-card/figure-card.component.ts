@@ -1,3 +1,4 @@
+import { FiguresService } from '@core/services/figures/figures.service';
 import { Figure, FigureObj } from './../../../core/services/models/figure';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,40 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FigureCardComponent implements OnInit {
   @Input() figure: Figure;
-  tmpFigure: FigureObj = {
-    id_grupofigure: 2,
-    figurename: 'Cuatro Esquinas',
-    positions: [
-      1,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      0,
-      0,
-      0,
-      1
-    ]
-  }
-  constructor() { }
+  
+  constructor(private figureService: FiguresService) { }
 
   ngOnInit(): void {
+  }
+
+  removeFigure(id: number): void{
+    this.figureService.removeFigureToStore(id);
   }
 
 }
