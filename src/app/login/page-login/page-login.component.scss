@@ -1,12 +1,57 @@
+@import '../../_mixins.scss';
+
+.bg-image{
+  @include bgImageUrl(url("https://cdn.pixabay.com/photo/2018/09/14/14/59/bingo-3677319_960_720.jpg"));
+}
+
 .loginBox{
+  background-color: white;
   border-radius: 1em;
   border: solid 1px black;
-  height: 20em;
+  height: 22em;
   width:  20em;
 
 }
 
 .loginLabel{
-  padding: 2em;
+  padding: 1em;
+  label{
+    font-weight: 500;
+  }
+}
+
+.loginInput{
+  margin-top: 2px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid silver;
+}
+
+%loginButton_base{
+  margin-top: 1em;
+  width: 60%;
+  padding: 0.3em;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.loginButton{
+  @extend %loginButton_base;
+  border: 1px solid rgb(101, 101, 252);
+  color: blue;
+  cursor: pointer;
+  &:hover{
+    color: white;
+    background-color: rgb(101, 101, 252);
+  }
+
   
+}
+
+.loginButton_disable{
+  @extend %loginButton_base;
+  border: 1px solid silver;
+  color: silver;
+  
+
 }

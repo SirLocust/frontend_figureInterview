@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ProfileModule } from './profile/profile.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ProfileModule } from './profile/profile.module';
       maxAge: 25,
       logOnly: environment.production,
     }),
+    FontAwesomeModule,
   ],
   providers: [
     {

@@ -1,4 +1,4 @@
-<div class="h-100vh flex justify-content-center align-items-center">
+<div class="h-100vh flex justify-content-center align-items-center bg-image">
   <div class="flex justify-content-center align-items-center loginBox">
     <form
       [formGroup]="form"
@@ -13,13 +13,15 @@
 
       <div class="loginLabel flex flex-column">
         <label for="">UserName</label>
-        <input type="text" formControlName="username" />
+        <input class="loginInput" type="text" formControlName="username" />
       </div>
       <div class="loginLabel flex flex-column">
         <label for="">Password</label>
-        <input type="text" formControlName="password" />
+        <input class="loginInput" type="password" formControlName="password" />
       </div>
-      <button [disabled]="!form.valid">Ingresar</button>
+      <button [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'">
+        Ingresar
+      </button>
     </form>
   </div>
 </div>
