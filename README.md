@@ -1,14 +1,12 @@
 # Welcome To My Spa for Frontend Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
-
 ## Tecnologies uses
 
-<img alt="Angular" src="https://img.shields.io/badge/angular-%23DD0031.svg?&style=for-the-badge&logo=angular&logoColor=white"/>
 <img alt="Git" src="https://img.shields.io/badge/git-%23F05033.svg?&style=for-the-badge&logo=git&logoColor=white"/>
-<img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
 <img alt="Redux" src="https://img.shields.io/badge/ngrx-%23593d88.svg?&style=for-the-badge&logo=ngrx&logoColor=white"/>
 <img alt="SASS" src="https://img.shields.io/badge/SASS-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/>
+<img alt="TypeScript" src="https://img.shields.io/badge/typescript-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white"/>
+<img alt="Angular" src="https://img.shields.io/badge/angular-%23DD0031.svg?&style=for-the-badge&logo=angular&logoColor=white"/>
 
 ## Preview
 
@@ -44,15 +42,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #### Crear Figura
 
 ![GenerateFigureCaptura](https://user-images.githubusercontent.com/38599892/118473021-262e8300-b6cf-11eb-9fd5-bc3368f5a5dd.jpg)
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
