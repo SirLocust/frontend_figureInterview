@@ -1,3 +1,4 @@
+import { SetActiveLoadingLogin, SetDesactiveLoadingLogin } from './../Ui/ui.actions';
 import { Token } from './../models/token';
 import { TokenService } from './../token/token.service';
 import { SetUserAction } from './auth.actions';
@@ -20,6 +21,7 @@ export class AuthService {
 
   requestAuth(username: string, password: string): Observable<Token> {
     const raw = `{\n	\"username\": \"${username}\",\n	\"password\": \"${password}\"\n}`;
+    this.store.dispatch(new SetActiveLoadingLogin());
     return this.http.post<Token>(`${this.urlApi}/auth`, raw).pipe(
       tap((data) => {
         const token = data.Token;
@@ -28,9 +30,14 @@ export class AuthService {
           this.setAuthStore(username);
           this.router.navigate(['/dashboard']);
         }
+        
+        this.store.dispatch( new SetDesactiveLoadingLogin());
+      },error => {
+        this.store.dispatch( new SetDesactiveLoadingLogin());
       })
     );
   }
+
   private setAuthStore(username: string): void {
     const user = new User(username);
     this.store.dispatch(new SetUserAction(user));

@@ -2,6 +2,8 @@ import * as fromAuth from '@core/services/auth/auth.reducer';
 import * as fromProfile from '@core/services/profile/profile.reducer';
 import * as fromFigures from '@core/services/figures/figures.reducer';
 import * as fromFiguresGroup from '@core/services/figures/figuresGroup.reducer'
+import * as fromUi from '@core/services/Ui/ui.reducer'
+
 import { ActionReducerMap } from '@ngrx/store';
 
 export interface AppState {
@@ -9,6 +11,7 @@ export interface AppState {
   profile: fromProfile.ProfileState;
   figures: fromFigures.FiguresState;
   figuresGroup: fromFiguresGroup.FiguresGroupState;
+  ui: fromUi.UiState;
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
@@ -16,4 +19,5 @@ export const appReducers: ActionReducerMap<AppState> = {
   profile: fromProfile.profileReducer,
   figures: fromFigures.figuresReducer,
   figuresGroup: fromFiguresGroup.figuresGroupReducer,
+  ui: fromUi.uiReducer,
 };

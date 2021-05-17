@@ -19,10 +19,16 @@
         <label for="">Password</label>
         <input class="loginInput" type="password" formControlName="password" />
       </div>
-      <button [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'">
+      <button
+        *ngIf="!isLoginLoading"
+        [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'"
+      >
         Ingresar
       </button>
-      <button [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'">
+      <button
+        *ngIf="isLoginLoading"
+        [ngClass]="!form.valid ? 'loginButton_disable' : 'loginButton'"
+      >
         <fa-icon [icon]="faSpinner" [spin]="true"> </fa-icon>
       </button>
     </form>

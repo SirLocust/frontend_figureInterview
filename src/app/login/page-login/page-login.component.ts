@@ -1,3 +1,5 @@
+import { AppState } from 'src/app/app.reducer';
+import { Store } from '@ngrx/store';
 import { AuthService } from './../../core/services/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -12,14 +14,19 @@ export class PageLoginComponent implements OnInit {
   form: FormGroup ;
   formIncorrect = false;
   faSpinner = faSpinner;
+  isLoginLoading =false;
   errosMessages ={
     error: 'Usuario o Contrase;a incorrecta'
   }
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService , private store: Store<AppState> ) {
     this.form = this.buildForm();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.select('ui').subscribe( data => {
+      this.isLoginLoading = data.loginLoading
+    })
+  }
 
   private buildForm(): FormGroup {
     return new FormGroup({
