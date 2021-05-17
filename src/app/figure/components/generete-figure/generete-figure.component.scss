@@ -1,11 +1,19 @@
+:host{
+  width: 100%;
+}
+
 .grid{
   width: 80%;
+  
   margin-top: 2em;
   display: grid;
   grid-template-columns: repeat(5,auto);
   grid-template-rows: repeat(5,auto);
   column-gap: 1.5em;
   row-gap: 1.5em;
+  margin-right: 0;
+  
+  
 }
 
 
@@ -22,7 +30,8 @@
 
 .item{
   justify-self: center;
-  width: 12em;
+  // align-items: center;
+  width: 14em;
   height: 2em;
   border-radius: 0.3em;
 }
@@ -54,4 +63,15 @@ button{
   cursor: pointer;
   border-radius: 2px;
   border: 1px solid silver;
+}
+
+
+@media screen  and (max-width: 1700px){
+  .item{
+    // justify-self: center;
+    // align-items: center;
+    width: 8.5em;
+    height: 2em;
+    border-radius: 0.3em;
+  }
 }

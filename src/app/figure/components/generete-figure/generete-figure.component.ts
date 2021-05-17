@@ -27,11 +27,15 @@ export class GenereteFigureComponent implements OnInit {
   }
 
   toggleItem(index: number): void {
+    if(index === 12){
+      return;
+    }
     this.positions[index] = this.reverseNumber(this.positions[index]);
   }
 
   private reverseNumber(num: number): number {
-    if (num === 0) {
+    
+    if (num === 0 ) {
       return 1;
     }
     return 0;

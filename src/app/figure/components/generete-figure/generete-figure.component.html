@@ -24,6 +24,6 @@
     </ng-container>
   </div>
   <div class="flex justify-content-end w-100">
-    <button [disabled]="!form.valid">Guardar</button>
+    <button [disabled]="!form.valid || !idGroupFigure">Guardar</button>
   </div>
 </form>
